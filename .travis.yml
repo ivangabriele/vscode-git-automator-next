@@ -24,3 +24,6 @@ after_script:
     if [ $TRAVIS_OS_NAME == "linux" ] && [ "$TRAVIS_NODE_VERSION" == "12" ]; then
       yarn test:unit --coverageReporters=text-lcov | coveralls
     fi
+
+notifications:
+  email: false
