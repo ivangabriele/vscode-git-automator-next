@@ -1,0 +1,120 @@
+{
+  "name": "vscode-git-automator",
+  "version": "0.0.0",
+  "displayName": "Git Automator [V3 PREVIEW]",
+  "description": "Automate your Git workflow & commit messages.",
+  "main": "./out/extension.js",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.36.1"
+  },
+  "scripts": {
+    "compile": "rimraf ./out && rollup -c",
+    "compile:dev": "rollup -c ./rollup.config.dev.js",
+    "compile:test": "rimraf ./out-test && tsc -p ./tsconfig.test.json",
+    "pretest": "rimraf ./out && yarn compile:dev",
+    "test": "yarn test:lint && yarn test:unit && yarn test:inte",
+    "test:docker": "./scripts/run_tests_in_docker.sh",
+    "test:inte": "yarn compile && yarn compile:test && node ./out-test/test/inte/run.js",
+    "test:lint": "tslint -p ./tsconfig.json",
+    "test:unit": "jest --coverage",
+    "preversion": "yarn compile",
+    "postversion": "git push origin HEAD && git push --tags",
+    "vscode:prepublish": "yarn compile",
+    "watch": "rimraf ./out && yarn compile:dev --watch"
+  },
+  "dependencies": {
+    "await-to-js": "2.1.1",
+    "is-command": "2.0.2",
+    "rorre": "1.1.0"
+  },
+  "devDependencies": {
+    "@types/command-exists": "1.2.0",
+    "@types/glob": "7.1.1",
+    "@types/jest": "24.0.15",
+    "@types/mocha": "5.2.7",
+    "@types/node": "12.6.8",
+    "@types/vscode": "1.36.0",
+    "exec-sh": "^0.3.2",
+    "glob": "7.1.4",
+    "jest": "24.8.0",
+    "jest-editor-support": "25.0.1",
+    "mocha": "6.2.0",
+    "prettier": "1.18.2",
+    "rimraf": "2.6.3",
+    "rollup": "1.17.0",
+    "rollup-plugin-commonjs": "10.0.1",
+    "rollup-plugin-node-resolve": "5.2.0",
+    "rollup-plugin-typescript2": "0.22.0",
+    "simple-git": "^1.122.0",
+    "ts-jest": "24.0.2",
+    "tslint": "5.18.0",
+    "tslint-config-airbnb": "5.11.1",
+    "tslint-config-prettier": "1.18.0",
+    "typescript": "3.5.3",
+    "vscode": "1.1.35",
+    "vscode-test": "1.0.2"
+  },
+  "activationEvents": [
+    "*"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.vscode-git-automator.commitAllFiles",
+        "title": "Add & Commit All Files"
+      },
+      {
+        "command": "extension.vscode-git-automator.commitCurrentFile",
+        "title": "Add & Commit Current File"
+      },
+      {
+        "command": "extension.vscode-git-automator.pushCurrentBranch",
+        "title": "Push Local Commits"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.vscode-git-automator.commitAllFiles",
+        "key": "ctrl+shift+a",
+        "mac": "cmd+shift+a"
+      },
+      {
+        "command": "extension.vscode-git-automator.commitCurrentFile",
+        "key": "ctrl+shift+z",
+        "mac": "cmd+shift+z"
+      },
+      {
+        "command": "extension.vscode-git-automator.pushCurrentBranch",
+        "key": "ctrl+shift+x",
+        "mac": "cmd+shift+x"
+      }
+    ]
+  },
+  "author": {
+    "name": "Ivan Gabriele",
+    "email": "ivan.gabriele@gmail.com",
+    "url": "https://www.ivangabriele.com"
+  },
+  "publisher": "ivangabriele",
+  "icon": "res/icon.png",
+  "categories": [
+    "Other",
+    "SCM Providers"
+  ],
+  "keywords": [
+    "automate",
+    "automationn",
+    "commit",
+    "git",
+    "message"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ivangabriele/vscode-git-automator-legacy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ivangabriele/vscode-git-automator-legacy/issues"
+  },
+  "homepage": "https://github.com/ivangabriele/vscode-git-automator-legacy#readme"
+}

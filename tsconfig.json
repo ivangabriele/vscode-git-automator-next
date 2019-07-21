@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "alwaysStrict": true,
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": true,
+    "module": "es2015",
+    "outDir": "./out",
+    "preserveConstEnums": true,
+    "skipLibCheck": true,
+    "rootDir": ".",
+    "sourceMap": true,
+    "target": "es6"
+  },
+  "exclude": ["./node_modules", "./out", "./out-test"]
+}
