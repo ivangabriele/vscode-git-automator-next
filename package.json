@@ -1,6 +1,6 @@
 {
   "name": "vscode-git-automator",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "displayName": "Git Automator [V3 PREVIEW]",
   "description": "Automate your Git workflow & commit messages.",
   "main": "./out/extension.js",
