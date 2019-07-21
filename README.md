@@ -17,7 +17,7 @@ messages, etc.
 
 - **[Conventional Commits][link-conventional-commits] integration.**
 - **Smart auto-prefill for your commit messages.**
-- **Actions guess.**
+- **Actions guessing.**
 - **Auto-commits splitting suggestions.**
 - **Branch generator via command palette.**
 - **Add and commit all or current file(s) in one shortcut.**
