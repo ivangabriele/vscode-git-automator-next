@@ -19,4 +19,8 @@ before_install:
     fi
 
 after_script:
-  - npx codecov
+  # https://github.com/nickmerwin/node-coveralls#jest
+  - |
+    if [ $TRAVIS_OS_NAME == "linux" ] && [ "$TRAVIS_NODE_VERSION" == "12" ]; then
+      yarn test:unit --coverageReporters=text-lcov | coveralls
+    fi
