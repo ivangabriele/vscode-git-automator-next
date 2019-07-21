@@ -1,17 +1,17 @@
 # Git Automator V3 Preview
 
+**VERY UNCOMPLETE AND UNSTABLE ALPHA VERSION! PLEASE USE [GIT AUTOMATOR V2][link-legacy] INSTEAD
+UNLESS YOU SPECIFICALLY WANT TO TEST IT.**
+
 [![Visual Studio Marketplace Version][img-marketplace-version]][link-marketplace]
 [![Visual Studio Marketplace Installs][img-marketplace-installs]][link-marketplace]
 [![Travis CI Build Status][img-travis]][link-travis]
 
-Git Automator is a Visual Studio Code extension automating your Git workflow: branch names, commit
-messages, etc.
+Git Automator is a Visual Studio Code extension automating your Git workflow: branches creation,
+commit splitting & messages, etc.
 
-> **:warning: VERY UNCOMPLETE AND UNSTABLE ALPHA VERSION! USE [GIT AUTOMATOR V2][link-legacy]
-> INSTEAD UNLESS YOU SPECIFICALLY WANT TO TEST IT.**
-
-> :information_source: This repository hosts the next major version of Git Automator which will
-> integrate a complete workflow change as well as integrate multiple new features.
+> This repository hosts the next major version of Git Automator which will integrate a complete
+> workflow change as well as integrate multiple new features.
 
 ## Features _(in progress)_
 
