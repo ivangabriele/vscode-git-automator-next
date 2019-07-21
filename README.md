@@ -6,6 +6,7 @@ UNLESS YOU SPECIFICALLY WANT TO TEST IT.**
 [![Visual Studio Marketplace Version][img-marketplace-version]][link-marketplace]
 [![Visual Studio Marketplace Installs][img-marketplace-installs]][link-marketplace]
 [![Travis CI Build Status][img-travis]][link-travis]
+[![Coveralls Code Coverage][img-coveralls]][link-coveralls]
 
 Git Automator is a Visual Studio Code extension automating your Git workflow: branches creation,
 commit splitting & messages, etc.
@@ -89,12 +90,16 @@ vsce publish
 
 ---
 
+[img-coveralls]:
+  https://img.shields.io/coveralls/github/ivangabriele/vscode-git-automator/master.svg?style=flat-square
 [img-marketplace-installs]:
   https://img.shields.io/visual-studio-marketplace/i/ivangabriele.vscode-git-automator.svg?style=flat-square
 [img-marketplace-version]:
   https://img.shields.io/visual-studio-marketplace/v/ivangabriele.vscode-git-automator.svg?style=flat-square
-[img-travis]: https://img.shields.io/travis/ivangabriele/vscode-git-automator.svg?style=flat-square
+[img-travis]:
+  https://img.shields.io/travis/ivangabriele/vscode-git-automator/master.svg?style=flat-square
 [link-conventional-commits]: https://www.conventionalcommits.org
+[link-coveralls]: https://coveralls.io/github/ivangabriele/vscode-git-automator
 [link-legacy]: https://marketplace.visualstudio.com/items/ivangabriele.vscode-git-add-and-commit
 [link-license]: https://github.com/ivangabriele/vscode-git-automator/blob/master/LICENSE
 [link-issues]: https://github.com/ivangabriele/vscode-git-automator/issues
