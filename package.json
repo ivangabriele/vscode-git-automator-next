@@ -27,6 +27,7 @@
   "dependencies": {
     "await-to-js": "2.1.1",
     "is-command": "2.0.2",
+    "ramda": "0.26.1",
     "rorre": "1.1.0"
   },
   "devDependencies": {
@@ -35,6 +36,7 @@
     "@types/jest": "24.0.15",
     "@types/mocha": "5.2.7",
     "@types/node": "12.6.8",
+    "@types/ramda": "0.26.16",
     "@types/vscode": "1.36.0",
     "coveralls": "3.0.5",
     "exec-sh": "^0.3.2",
