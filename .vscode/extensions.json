@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-typescript-tslint-plugin",
+    "orta.vscode-jest"
+  ],
+  "unwantedRecommendations": ["hookyqr.beautify"]
+}
