@@ -35,7 +35,6 @@
     "@types/mocha": "5.2.7",
     "@types/node": "12.6.8",
     "@types/vscode": "1.36.0",
-    "copyfiles": "2.1.1",
     "coveralls": "3.0.5",
     "exec-sh": "^0.3.2",
     "glob": "7.1.4",
