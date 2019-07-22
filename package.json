@@ -11,7 +11,7 @@
   "scripts": {
     "compile": "rimraf ./out && rollup -c",
     "compile:dev": "rollup -c ./rollup.config.dev.js",
-    "compile:test": "rimraf ./out-test && tsc -p ./tsconfig.test.json",
+    "compile:test": "rimraf ./out-test && tsc -p ./tsconfig.test.json && ncp ./test/inte/fixtures ./out-test/test/inte/fixtures",
     "pretest": "rimraf ./out && yarn compile:dev",
     "test": "yarn test:lint && yarn test:unit && yarn test:inte",
     "test:docker": "./scripts/run_tests_in_docker.sh",
