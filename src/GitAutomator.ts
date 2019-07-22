@@ -61,7 +61,7 @@ export default class GitAutomator {
       }
 
       if (ahead === 0) {
-        window.showWarningMessage(
+        window.showInformationMessage(
           `Your "${branchName}" branch is already up-to-date with "${remoteBranchName}".`,
         );
 
