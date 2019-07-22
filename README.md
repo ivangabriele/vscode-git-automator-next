@@ -110,7 +110,7 @@ vsce publish
 [img-marketplace-version]:
   https://img.shields.io/visual-studio-marketplace/v/ivangabriele.vscode-git-automator.svg?style=flat-square
 [img-travis]:
-  https://img.shields.io/travis/ivangabriele/vscode-git-automator/master.svg?style=flat-square
+  https://img.shields.io/travis/com/ivangabriele/vscode-git-automator/master.svg?style=flat-square
 [link-conventional-commits]: https://www.conventionalcommits.org
 [link-coveralls]: https://coveralls.io/github/ivangabriele/vscode-git-automator
 [link-legacy]: https://marketplace.visualstudio.com/items/ivangabriele.vscode-git-add-and-commit
@@ -118,4 +118,4 @@ vsce publish
 [link-issues]: https://github.com/ivangabriele/vscode-git-automator/issues
 [link-marketplace]: https://marketplace.visualstudio.com/items/ivangabriele.vscode-git-automator
 [link-repo]: https://github.com/ivangabriele/vscode-git-automator
-[link-travis]: https://travis-ci.org/ivangabriele/vscode-git-automator
+[link-travis]: https://travis-ci.com/ivangabriele/vscode-git-automator
