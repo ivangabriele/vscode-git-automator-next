@@ -42,6 +42,7 @@
     "jest": "24.8.0",
     "jest-editor-support": "25.0.1",
     "mocha": "6.2.0",
+    "ncp": "2.0.0",
     "prettier": "1.18.2",
     "rimraf": "2.6.3",
     "rollup": "1.17.0",
