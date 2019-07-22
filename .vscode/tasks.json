@@ -42,7 +42,7 @@
       "presentation": {
         "clear": true,
         "panel": "shared",
-        "reveal": "never",
+        "reveal": "always",
         "revealProblems": "onProblem"
       }
     }
