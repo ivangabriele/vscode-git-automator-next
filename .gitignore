@@ -1,11 +1,13 @@
+# Reset any global Git config ignoring ".vscode" directories:
+!/.vscode
+/.vscode/settings.json
+
 /.rpt2_cache
 /.vscode-test
 /coverage
 /node_modules
 /out
 /out-test
-
-/.vscode/settings.json
 
 *.log
 *.vsix
