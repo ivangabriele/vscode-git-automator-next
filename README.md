@@ -61,6 +61,19 @@ automatically rebuild when changes are made to the `src/` directory but you have
 tested VS Code instance in order to load your changes. You can find the `>Developer: Reload Window`
 in the command palette.
 
+### Recommended VS Code Settings
+
+```json
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.rulers": [100],
+  "eslint.enable": false,
+  "javascript.format.enable": false,
+  "typescript.format.enable": false
+}
+```
+
 ### Test
 
 - Lint Tests: `yarn test:lint`
