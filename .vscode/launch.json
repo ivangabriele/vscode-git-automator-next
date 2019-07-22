@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Extension: Debug",
+      "type": "extensionHost",
+      "args": ["--extensionDevelopmentPath=${workspaceRoot}"],
+      "internalConsoleOptions": "openOnSessionStart",
+      "outFiles": ["${workspaceRoot}/out/**/*.js"],
+      "preLaunchTask": "build: watch",
+      "request": "launch",
+      "runtimeExecutable": "${execPath}",
+      "sourceMaps": true,
+      "stopOnEntry": false,
+      "trace": false
+    },
+    {
+      "name": "Extension: Staging",
+      "type": "extensionHost",
+      "args": ["--extensionDevelopmentPath=${workspaceRoot}"],
+      "preLaunchTask": "build: prod",
+      "request": "launch",
+      "runtimeExecutable": "${execPath}",
+      "sourceMaps": false,
+      "stopOnEntry": true,
+      "trace": true
+    }
+  ]
+}
