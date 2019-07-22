@@ -18,6 +18,7 @@
     "test:inte": "yarn compile && yarn compile:test && node ./out-test/test/inte/run.js",
     "test:lint": "tslint -p ./tsconfig.json",
     "test:unit": "jest --coverage",
+    "test:watch": "yarn test:unit --watch",
     "preversion": "yarn compile",
     "postversion": "git push origin HEAD && git push --tags",
     "vscode:prepublish": "yarn compile",
