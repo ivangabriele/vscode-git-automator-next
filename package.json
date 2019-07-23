@@ -25,7 +25,6 @@
     "watch": "rimraf ./out && yarn compile:dev --watch"
   },
   "dependencies": {
-    "await-to-js": "2.1.1",
     "is-command": "2.0.2",
     "ramda": "0.26.1",
     "rorre": "1.1.0"
