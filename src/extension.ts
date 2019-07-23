@@ -21,20 +21,11 @@ export async function activate(context: ExtensionContext) {
     const legacyExtension = extensions.getExtension(`ivangabriele.vscode-git-add-and-commit`);
     if (legacyExtension !== undefined && legacyExtension.isActive) {
       window.showErrorMessage(
-        'Git Automator legacy extension is active. Please disable or uninstall it and reload VS Code.',
+        `Git Automator legacy extension is active. ` +
+          `Please disable or uninstall it and reload VS Code.`,
       );
 
       return;
-    }
-
-    // Is there more than one workspace ?
-    if (workspace.workspaceFolders.length > 1) {
-      const firstWorkspace = workspace.workspaceFolders[0];
-      window.showWarningMessage(
-        `You seem to have more than one open workspace for this VS Code instance. ` +
-          `Git Automator doesn't support that case yet. ` +
-          `Only the first one (${firstWorkspace.name}) will be usable for now.`,
-      );
     }
 
     new GitAutomator(context);
