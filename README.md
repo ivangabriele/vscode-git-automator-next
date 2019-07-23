@@ -23,6 +23,7 @@ commit splitting & messages, etc.
 - **Branch generator via command palette.**
 - **Add and commit all or current file(s) in one shortcut.**
 - **Push your current branch in one shortcut.**
+- **Compatible with multiple workspaces.**
 
 ---
 
