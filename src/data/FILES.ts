@@ -2,56 +2,68 @@ export type DataFile = {
   // Internal unique identifier. MUST be unique AND case-sensitive.
   id: string;
   // File name pattern as a Regex string. MUST be end-exact AND include the extension.
-  pattern: string;
+  pattern: RegExp;
   // Git commit message [SCOPE] part.
   scopeLabel: string;
   // Git commit message [ACTION] part related to the Git state when this file is tracked.
   actionLabel?: {
-    // Prefiller Default: `"create"`.
+    // Committer Default: `"create"`.
     onCreate?: string;
-    // Prefiller Default: `"delete"`.
+    // Committer Default: `"delete"`.
     onDelete?: string;
-    // Prefiller Default: `"update"`.
+    // Committer Default: `""`.
     onModify?: string;
-    // Prefiller Default: `"move"`.
+    // Committer Default: `"move"`.
     onRename?: string;
   };
-  // To which other files may it be linked ? Prefiller Default: `[]`.
+  // To which other files may it be linked ? Committer Default: `[]`.
   links?: {
     // File internal unique identifier.
     id: string;
-    // When this file is linked to this other file, does the Prefiller should prefill commit
+    // When this file is linked to this other file, does the Committer should prefill commit
     // messages prioritizing this file specifications over the other one ?
     isDefault: boolean;
   }[];
-  // Does this file is usually ignored ? Prefiller Default: `false`.
+  // Does this file is usually ignored ? Committer Default: `false`.
   shouldBeIgnored?: boolean;
 };
 
 const FILES: DataFile[] = [
   {
     id: 'CHANGELOG',
-    pattern: '/CHANGE[-_]?LOG(\\.(md|txt))?$/i',
+    pattern: /^CHANGE[-_]?LOG(\.(md|txt))?$/i,
     scopeLabel: 'changelog',
+    actionLabel: {
+      onModify: 'update ',
+    },
   },
   {
     id: 'DOT_Dockerfile',
-    pattern: '/[^\\/\\\\]*\\.Dockerfile$/i',
+    pattern: /^[a-z0-9-_]*\.Dockerfile$/i,
     scopeLabel: 'docker',
   },
   {
+    id: 'DOT_gitignore',
+    pattern: /\.gitignore$/i,
+    scopeLabel: 'git',
+    actionLabel: {
+      onCreate: 'ignore ',
+      onModify: 'ignore ',
+    },
+  },
+  {
     id: 'DOT_travis_DOT_yml',
-    pattern: '/\\.travis\\.yml$/i',
+    pattern: /^\.travis\.yml$/i,
     scopeLabel: 'travis',
   },
   {
     id: 'jest_DOT_config_DOT_js',
-    pattern: '/jest\\.config\\.js$/i',
+    pattern: /^jest\.config\.js$/i,
     scopeLabel: 'jest',
   },
   {
     id: 'package_DASH_lock_DOT_json',
-    pattern: '/package-lock\\.json$/i',
+    pattern: /^package-lock\.json$/i,
     scopeLabel: 'npm',
     links: [
       {
@@ -62,7 +74,7 @@ const FILES: DataFile[] = [
   },
   {
     id: 'package_DOT_json',
-    pattern: '/package\\.json$/i',
+    pattern: /^package\.json$/i,
     scopeLabel: 'npm',
     links: [
       {
@@ -76,8 +88,16 @@ const FILES: DataFile[] = [
     ],
   },
   {
+    id: 'README_DOT_md',
+    pattern: /^README(\.(md|txt))?$/i,
+    scopeLabel: 'readme',
+    actionLabel: {
+      onModify: 'update ',
+    },
+  },
+  {
     id: 'yarn_DOT_lock',
-    pattern: '/yarn\\.lock$/i',
+    pattern: /^yarn\.lock$/i,
     scopeLabel: 'yarn',
     links: [
       {
