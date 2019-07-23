@@ -19,7 +19,7 @@ commit splitting & messages, etc.
 - **[Conventional Commits][link-conventional-commits] integration.**
 - **Smart auto-prefill for your commit messages.**
 - **Actions guessing.**
-- **Auto-commits splitting suggestions.**
+- **Automated commits splitting (when committing all files).**
 - **Branch generator via command palette.**
 - **Add and commit all or current file(s) in one shortcut.**
 - **Push your current branch in one shortcut.**
