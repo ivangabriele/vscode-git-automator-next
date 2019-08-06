@@ -37,7 +37,7 @@ export default class GitAutomator {
       if (activeTextEditor === undefined) return [true];
       if (activeTextEditor.document.isUntitled) return [true];
 
-      return [false, activeTextEditor.document.uri.path];
+      return [false, activeTextEditor.document.uri.fsPath];
     } catch (err) {
       handleUnexpectedError(err, 'GitAutomator#activeFileUri');
     }
@@ -72,8 +72,9 @@ export default class GitAutomator {
    */
   init(): void {
     try {
-      const workspaceUris = workspace.workspaceFolders.map(folder => folder.uri.path);
+      const workspaceUris = workspace.workspaceFolders.map(folder => folder.uri.fsPath);
       const [hasError, activeFileUri] = this.activeFileUri;
+      console.log(workspace.workspaceFolders);
 
       if (!hasError) {
         const workspaceUriMatch = workspaceUris.filter(uri => activeFileUri.startsWith(uri));
@@ -121,8 +122,8 @@ export default class GitAutomator {
     try {
       if (openedFile.uri.scheme !== 'file') return;
 
-      const workspaceUris = workspace.workspaceFolders.map(folder => folder.uri.path);
-      const workspaceUriMatch = workspaceUris.filter(uri => openedFile.uri.path.startsWith(uri));
+      const workspaceUris = workspace.workspaceFolders.map(folder => folder.uri.fsPath);
+      const workspaceUriMatch = workspaceUris.filter(uri => openedFile.uri.fsPath.startsWith(uri));
       if (workspaceUriMatch.length === 0) return;
 
       // If we found a workspace matching the opened file:
@@ -302,7 +303,7 @@ export default class GitAutomator {
         return [true];
       }
 
-      const activeFilePath = activeTextEditor.document.uri.path.substr(
+      const activeFilePath = activeTextEditor.document.uri.fsPath.substr(
         this.activeWorkspaceUri.length + 1,
       );
 
