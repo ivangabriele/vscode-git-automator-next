@@ -91,13 +91,14 @@ export default class Committer {
 
   private convertPathToScope(path: string): [string, DataFile?] {
     try {
-      const filePathChunks = path.split(/\//g);
+      // Normalize Windows backslashes
+      const normalizedPath = path.replace(/\\/g, '/');
+      const filePathChunks = normalizedPath.split(/\//g);
+      console.log(filePathChunks);
       const fileNameWithExtension = filePathChunks.pop();
       const filePath = filePathChunks.join('/');
 
       const scopePath = filePath
-        // Normalize Windows backslashes
-        .replace(/\\/g, '/')
         // Remove leading "lib/":
         .replace(/^lib\//, '')
         // Remove leading "packages/"
