@@ -94,7 +94,6 @@ export default class Committer {
       // Normalize Windows backslashes
       const normalizedPath = path.replace(/\\/g, '/');
       const filePathChunks = normalizedPath.split(/\//g);
-      console.log(filePathChunks);
       const fileNameWithExtension = filePathChunks.pop();
       const filePath = filePathChunks.join('/');
 
