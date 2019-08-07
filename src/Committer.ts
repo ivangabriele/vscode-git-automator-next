@@ -96,6 +96,8 @@ export default class Committer {
       const filePath = filePathChunks.join('/');
 
       const scopePath = filePath
+        // Normalize Windows backslashes
+        .replace(/\\/g, '/')
         // Remove leading "lib/":
         .replace(/^lib\//, '')
         // Remove any "src/"
