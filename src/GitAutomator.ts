@@ -175,7 +175,7 @@ export default class GitAutomator {
       const cancellationTokenSource = showProgressNotification(
         `Pushing ${ahead} commits to "${remoteBranchName}"…`,
       );
-      await git.push('origin', branchName);
+      await git.push('origin', 'HEAD');
       cancellationTokenSource.cancel();
     } catch (err) {
       handleUnexpectedError(err, 'GitAutomator#push()');
