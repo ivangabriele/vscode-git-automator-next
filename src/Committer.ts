@@ -100,6 +100,8 @@ export default class Committer {
         .replace(/\\/g, '/')
         // Remove leading "lib/":
         .replace(/^lib\//, '')
+        // Remove leading "packages/"
+        .replace(/^packages\//, '')
         // Remove any "src/"
         .replace(/src\//g, '');
 
