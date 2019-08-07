@@ -74,7 +74,6 @@ export default class GitAutomator {
     try {
       const workspaceUris = workspace.workspaceFolders.map(folder => folder.uri.fsPath);
       const [hasError, activeFileUri] = this.activeFileUri;
-      console.log(workspace.workspaceFolders);
 
       if (!hasError) {
         const workspaceUriMatch = workspaceUris.filter(uri => activeFileUri.startsWith(uri));
@@ -240,9 +239,7 @@ export default class GitAutomator {
       if (hasError2) return;
 
       const statusPairs = Object.entries(status);
-      const activeFileStatusPairs = statusPairs.filter(
-        ([, paths]) => Array.isArray(paths) && paths.includes(activeFilePath),
-      );
+      const activeFileStatusPairs = statusPairs.filter(([, paths]) => Array.isArray(paths));
       if (activeFileStatusPairs.length === 0) {
         window.showWarningMessage(
           `This file doesn't have any tracked change. Did you forget to save it ?`,
